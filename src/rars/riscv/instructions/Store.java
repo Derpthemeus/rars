@@ -56,6 +56,7 @@ public abstract class Store extends BasicInstruction {
         try {
             store(RegisterFile.getValue(operands[2]) + operands[1], RegisterFile.getValueLong(operands[0]));
         } catch (AddressErrorException e) {
+            e.printStackTrace();
             throw new SimulationException(statement, e);
         }
     }
